@@ -32,9 +32,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Sample: ");
         ParseExp("A = D - (C + B)");
-        Console.WriteLine(); // Make a new line.
+        Console.WriteLine();
 
         string[] expressions = {
             "A = (A^2 * (B+C)^2)",
@@ -178,7 +177,7 @@ class Program
         {
             if (char.IsLetterOrDigit(exp[0]))
             {
-                lexContainer.Items.Add(new LexValue(exp[0], true)); // Expression.
+                lexContainer.Items.Add(new LexValue(exp[0], true));
                 exp.RemoveAt(0);
                 continue;
             }
@@ -197,7 +196,7 @@ class Program
                     continue;
                 }
 
-                lexContainer.Items.Add(new LexValue(exp[0], false)); // Operator.
+                lexContainer.Items.Add(new LexValue(exp[0], false));
                 exp.RemoveAt(0);
             }
         }
